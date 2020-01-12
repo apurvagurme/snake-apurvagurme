@@ -65,6 +65,13 @@ class Food {
   get position() {
     return [this.colId, this.rowId];
   }
+
+  update() {
+    this.colId = Math.floor(Math.random() * 100);
+    console.log(this.colId);
+    this.rowId = Math.floor(Math.random() * 60);
+    console.log(this.rowId);
+  }
 }
 
 class Game {
@@ -77,9 +84,13 @@ class Game {
   get isFoodEaten() {
     const snake = JSON.stringify(this.snake.head);
     const food = JSON.stringify(this.food.position);
-    console.log(snake == food);
     return snake == food;
   }
+
+  updateFood() {
+    this.food.update();
+  }
+
 }
 
 const NUM_OF_COLS = 100;
@@ -152,7 +163,8 @@ const updateAfterFoodIsEaten = game => {
   setInterval(() => {
     if (game.isFoodEaten) {
       eraseFood(game.food);
-      generateNewFood();
+      game.updateFood();
+      drawFood(game.food);
     }
   }, 1000)
 }
