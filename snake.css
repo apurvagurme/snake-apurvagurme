@@ -2,6 +2,14 @@ h1 {
   text-align: center;
 }
 
+#score{
+  width: 70px;
+  height: 30px;
+  margin-left: 1040px;
+  background-color: lightgray;
+  border: 1px solid rebeccapurple;
+}
+
 #grid {
   width: 800px;
   display: flex;

@@ -81,13 +81,13 @@ class Game {
   constructor(food, snake, ghostSnake) {
     this.food = food;
     this.snake = snake;
-    this.ghostSnake = ghostSnake
+    this.ghostSnake = ghostSnake;
+    this.scores = 0;
   }
 
   get isFoodEaten() {
     const snake = JSON.stringify(this.snake.head);
     const food = JSON.stringify(this.food.position);
-    console.log(snake, food);
     return snake == food;
   }
 
@@ -98,11 +98,15 @@ class Game {
   updateLengthOfSnake() {
     this.snake.increaseLength();
   }
+
+  updateScore() {
+    this.scores = this.scores + 1;
+    updateScores(this.scores);
+  }
 }
 
 const NUM_OF_COLS = 100;
 const NUM_OF_ROWS = 60;
-
 const GRID_ID = 'grid';
 
 const getGrid = () => document.getElementById(GRID_ID);
@@ -110,6 +114,8 @@ const getCellId = (colId, rowId) => colId + '_' + rowId;
 
 const getCell = (colId, rowId) =>
   document.getElementById(getCellId(colId, rowId));
+
+const updateScores = (scores) => document.getElementById(`score`).innerText = scores
 
 const createCell = function (grid, colId, rowId) {
   const cell = document.createElement('div');
@@ -173,6 +179,7 @@ const updateAfterFoodIsEaten = game => {
       game.updateFood();
       drawFood(game.food);
       game.updateLengthOfSnake();
+      game.updateScore();
     }
   }, 100)
 }
