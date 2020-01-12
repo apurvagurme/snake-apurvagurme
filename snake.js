@@ -68,9 +68,7 @@ class Food {
 
   update() {
     this.colId = Math.floor(Math.random() * 100);
-    console.log(this.colId);
     this.rowId = Math.floor(Math.random() * 60);
-    console.log(this.rowId);
   }
 }
 
@@ -84,6 +82,7 @@ class Game {
   get isFoodEaten() {
     const snake = JSON.stringify(this.snake.head);
     const food = JSON.stringify(this.food.position);
+    console.log(snake, food);
     return snake == food;
   }
 
@@ -97,12 +96,6 @@ const NUM_OF_COLS = 100;
 const NUM_OF_ROWS = 60;
 
 const GRID_ID = 'grid';
-
-const drawFood = function (food) {
-  let [colId, rowId] = food.position;
-  const cell = getCell(colId, rowId);
-  cell.classList.add(`food`);
-};
 
 const getGrid = () => document.getElementById(GRID_ID);
 const getCellId = (colId, rowId) => colId + '_' + rowId;
@@ -159,6 +152,12 @@ const eraseFood = function (food) {
   cell.classList.remove('food')
 }
 
+const drawFood = function (food) {
+  let [colId, rowId] = food.position;
+  const cell = getCell(colId, rowId);
+  cell.classList.add(`food`);
+};
+
 const updateAfterFoodIsEaten = game => {
   setInterval(() => {
     if (game.isFoodEaten) {
@@ -166,7 +165,7 @@ const updateAfterFoodIsEaten = game => {
       game.updateFood();
       drawFood(game.food);
     }
-  }, 1000)
+  }, 100)
 }
 
 const main = function () {
