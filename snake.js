@@ -55,9 +55,8 @@ class Snake {
     this.positions.push([headX + deltaX, headY + deltaY]);
   }
 
-  increaseLength() {
-    const [colId, rowId] = this.head;
-    this.positions.push([colId + 1, rowId + 1]);
+  increaseLength(food) {
+    this.positions.unshift(food);
   }
 }
 
@@ -96,7 +95,7 @@ class Game {
   }
 
   updateLengthOfSnake() {
-    this.snake.increaseLength();
+    this.snake.increaseLength(this.food.position);
   }
 
   updateScore() {
