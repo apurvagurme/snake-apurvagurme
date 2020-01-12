@@ -30,6 +30,10 @@ class Snake {
     this.previousTail = [0, 0];
   }
 
+  get head() {
+    return this.positions[this.positions.length - 1];
+  }
+
   get location() {
     return this.positions.slice();
   }
@@ -60,6 +64,21 @@ class Food {
 
   get position() {
     return [this.colId, this.rowId];
+  }
+}
+
+class Game {
+  constructor(food, snake, ghostSnake) {
+    this.food = food;
+    this.snake = snake;
+    this.ghostSnake = ghostSnake
+  }
+
+  get isFoodEaten() {
+    const snake = JSON.stringify(this.snake.head);
+    const food = JSON.stringify(this.food.position);
+    console.log(snake == food);
+    return snake == food;
   }
 }
 
@@ -123,6 +142,21 @@ const attachEventListeners = snake => {
   document.body.onkeydown = handleKeyPress.bind(null, snake);
 };
 
+const eraseFood = function (food) {
+  let [colId, rowId] = food.position;
+  const cell = getCell(colId, rowId);
+  cell.classList.remove('food')
+}
+
+const updateAfterFoodIsEaten = game => {
+  setInterval(() => {
+    if (game.isFoodEaten) {
+      eraseFood(game.food);
+      generateNewFood();
+    }
+  }, 1000)
+}
+
 const main = function () {
   const snake = new Snake(
     [
@@ -145,12 +179,13 @@ const main = function () {
   );
 
   const food = new Food(5, 5);
-
+  const game = new Game(food, snake, ghostSnake);
   attachEventListeners(snake);
   createGrids();
   drawSnake(snake);
   drawSnake(ghostSnake);
   drawFood(food);
+  updateAfterFoodIsEaten(game);
 
   setInterval(() => {
     moveAndDrawSnake(snake);
