@@ -54,6 +54,11 @@ class Snake {
 
     this.positions.push([headX + deltaX, headY + deltaY]);
   }
+
+  increaseLength() {
+    const [colId, rowId] = this.head;
+    this.positions.push([colId + 1, rowId + 1]);
+  }
 }
 
 class Food {
@@ -90,6 +95,9 @@ class Game {
     this.food.update();
   }
 
+  updateLengthOfSnake() {
+    this.snake.increaseLength();
+  }
 }
 
 const NUM_OF_COLS = 100;
@@ -164,6 +172,7 @@ const updateAfterFoodIsEaten = game => {
       eraseFood(game.food);
       game.updateFood();
       drawFood(game.food);
+      game.updateLengthOfSnake();
     }
   }, 100)
 }
