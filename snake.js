@@ -52,10 +52,27 @@ class Snake {
   }
 }
 
+class Food {
+  constructor(colId, rowId) {
+    this.colId = colId;
+    this.rowId = rowId;
+  }
+
+  get position() {
+    return [this.colId, this.rowId];
+  }
+}
+
 const NUM_OF_COLS = 100;
 const NUM_OF_ROWS = 60;
 
 const GRID_ID = 'grid';
+
+const drawFood = function (food) {
+  let [colId, rowId] = food.position;
+  const cell = getCell(colId, rowId);
+  cell.classList.add(`food`);
+};
 
 const getGrid = () => document.getElementById(GRID_ID);
 const getCellId = (colId, rowId) => colId + '_' + rowId;
@@ -63,14 +80,14 @@ const getCellId = (colId, rowId) => colId + '_' + rowId;
 const getCell = (colId, rowId) =>
   document.getElementById(getCellId(colId, rowId));
 
-const createCell = function(grid, colId, rowId) {
+const createCell = function (grid, colId, rowId) {
   const cell = document.createElement('div');
   cell.className = 'cell';
   cell.id = getCellId(colId, rowId);
   grid.appendChild(cell);
 };
 
-const createGrids = function() {
+const createGrids = function () {
   const grid = getGrid();
   for (let y = 0; y < NUM_OF_ROWS; y++) {
     for (let x = 0; x < NUM_OF_COLS; x++) {
@@ -79,13 +96,13 @@ const createGrids = function() {
   }
 };
 
-const eraseTail = function(snake) {
+const eraseTail = function (snake) {
   let [colId, rowId] = snake.previousTail;
   const cell = getCell(colId, rowId);
   cell.classList.remove(snake.species);
 };
 
-const drawSnake = function(snake) {
+const drawSnake = function (snake) {
   snake.location.forEach(([colId, rowId]) => {
     const cell = getCell(colId, rowId);
     cell.classList.add(snake.species);
@@ -96,7 +113,7 @@ const handleKeyPress = snake => {
   snake.turnLeft();
 };
 
-const moveAndDrawSnake = function(snake) {
+const moveAndDrawSnake = function (snake) {
   snake.move();
   eraseTail(snake);
   drawSnake(snake);
@@ -106,7 +123,7 @@ const attachEventListeners = snake => {
   document.body.onkeydown = handleKeyPress.bind(null, snake);
 };
 
-const main = function() {
+const main = function () {
   const snake = new Snake(
     [
       [40, 25],
@@ -127,10 +144,13 @@ const main = function() {
     'ghost'
   );
 
+  const food = new Food(5, 5);
+
   attachEventListeners(snake);
   createGrids();
   drawSnake(snake);
   drawSnake(ghostSnake);
+  drawFood(food);
 
   setInterval(() => {
     moveAndDrawSnake(snake);
