@@ -81,8 +81,8 @@ const updateAfterFoodIsEaten = game => {
   }, 100)
 }
 
-const main = function () {
-  const snake = new Snake(
+const initSnake = function () {
+  return new Snake(
     [
       [40, 25],
       [41, 25],
@@ -91,8 +91,10 @@ const main = function () {
     new Direction(EAST),
     'snake'
   );
+}
 
-  const ghostSnake = new Snake(
+const initGhostSnake = function () {
+  return new Snake(
     [
       [40, 30],
       [41, 30],
@@ -101,25 +103,44 @@ const main = function () {
     new Direction(SOUTH),
     'ghost'
   );
+}
 
+const initGame = function () {
+  const snake = initSnake();
+  const ghostSnake = initGhostSnake();
   const food = new Food(5, 5);
   const game = new Game(food, snake, ghostSnake);
-  attachEventListeners(snake);
+  return game;
+};
+
+const setup = function (game) {
+  attachEventListeners(game.snake);
   createGrids();
-  drawSnake(snake);
-  drawSnake(ghostSnake);
-  drawFood(food);
+  drawSnake(game.snake);
+  drawSnake(game.ghostSnake);
+  drawFood(game.food);
   updateAfterFoodIsEaten(game);
+}
 
-  setInterval(() => {
-    moveAndDrawSnake(snake);
-    moveAndDrawSnake(ghostSnake);
-  }, 200);
-
+const changeDirection = function (game) {
   setInterval(() => {
     let x = Math.random() * 100;
     if (x > 50) {
-      ghostSnake.turnLeft();
+      game.ghostSnake.turnLeft();
     }
   }, 500);
+}
+
+const moveSnake = function (game) {
+  setInterval(() => {
+    moveAndDrawSnake(game.snake);
+    moveAndDrawSnake(game.ghostSnake);
+  }, 200);
+}
+
+const main = function () {
+  const game = initGame();
+  setup(game);
+  changeDirection(game);
+  moveSnake(game);
 };
