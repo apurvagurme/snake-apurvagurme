@@ -23,5 +23,6 @@
 * Add a scoring mechanism --done--
 * If snake touches itself or the walls, the game should be over --done--
 * Give ghost snake the ability to eat the food --done--
+* Score should not increase when ghostSnake eats the food.
 * The game ends when your snake touches the ghost snake.
 * Provide a special type of food that increases the score without changing the length of the snake.
