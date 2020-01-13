@@ -21,4 +21,4 @@
 * Allow snake to eat the randomly generated food --done--
 * Upon eating the food, snake should grow tall --done--
 * Add a scoring mechanism --done--
-* If snake touches itself or the walls, the game should be over 
+* If snake touches itself or the walls, the game should be over --done--

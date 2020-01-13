@@ -6,7 +6,7 @@ class Game {
     this.scores = 0;
   }
 
-  get isFoodEaten() {
+  isFoodEaten() {
     const snake = JSON.stringify(this.snake.head);
     const food = JSON.stringify(this.food.position);
     return snake == food;
@@ -23,5 +23,10 @@ class Game {
   updateScore() {
     this.scores = this.scores + 1;
     updateScores(this.scores);
+  }
+
+  isGameEnded(noOfCols, noOfRows) {
+    return this.snake.hasTouchedItself() ||
+      this.snake.hasTouchedWall(noOfCols, noOfRows);
   }
 }
