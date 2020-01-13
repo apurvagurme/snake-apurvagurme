@@ -3,7 +3,8 @@ h1 {
 }
 
 #score{
-  width: 80px;
+  padding-top: 10px;
+  width: 100px;
   height: 40px;
   margin-left: 1040px;
   background-color: lightgray;

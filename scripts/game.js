@@ -9,7 +9,9 @@ class Game {
   isFoodEaten() {
     const snake = JSON.stringify(this.snake.head);
     const food = JSON.stringify(this.food.position);
-    return snake == food;
+    const ghostSnake = JSON.stringify(this.ghostSnake.head);
+    console.log(ghostSnake, food);
+    return snake == food || ghostSnake == food;
   }
 
   updateFood() {

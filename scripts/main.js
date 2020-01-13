@@ -12,7 +12,7 @@ const getCellId = (colId, rowId) => colId + '_' + rowId;
 const getCell = (colId, rowId) =>
   document.getElementById(getCellId(colId, rowId));
 
-const updateScores = (scores) => document.getElementById('score').innerText = scores
+const updateScores = (scores) => document.getElementById('score').innerText = `SCORE IS: ${scores}`
 
 const createCell = function (grid, colId, rowId) {
   const cell = document.createElement('div');
@@ -115,7 +115,7 @@ const initGhostSnake = function () {
 const initGame = function () {
   const snake = initSnake();
   const ghostSnake = initGhostSnake();
-  const food = new Food(5, 5);
+  const food = new Food(44, 30);
   const game = new Game(food, snake, ghostSnake);
   return game;
 };
