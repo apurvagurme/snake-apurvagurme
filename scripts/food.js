@@ -10,7 +10,6 @@ class Food {
     const colId = this.#colId;
     const rowId = this.#rowId;
     return { colId, rowId }
-
   }
 
   get position() {

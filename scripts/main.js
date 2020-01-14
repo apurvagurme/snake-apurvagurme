@@ -42,10 +42,6 @@ const drawSnake = function (snake) {
   });
 };
 
-const handleKeyPress = snake => {
-  snake.turnLeft();
-};
-
 const moveAndDrawSnake = function (game) {
   game.moveSnake();
   eraseTail(game);
@@ -53,8 +49,12 @@ const moveAndDrawSnake = function (game) {
   drawSnake(gameStatus.snake);
 };
 
-const attachEventListeners = snake => {
-  document.body.onkeydown = handleKeyPress.bind(null, snake);
+const handleKeyPress = snake => {
+  snake.turnLeft();
+};
+
+const attachEventListeners = game => {
+  document.body.onkeydown = () => game.handleKeyPress();
 };
 
 const eraseFood = function (food) {
@@ -109,8 +109,7 @@ const createGame = function () {
 };
 
 const setup = function (game) {
-  const gameStatus = game.status;
-  attachEventListeners(gameStatus.snake);
+  attachEventListeners(game);
   createGrids();
   updateAfterFoodIsEaten(game);
 }

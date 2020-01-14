@@ -10,13 +10,12 @@ class Game {
   }
 
   get status() {
-    const snake = this.#snake;
+    const snakeStatus = this.#snake.status;
     const foodStatus = this.#food.status;
-    const food = { rowId: foodStatus.rowId, colId: foodStatus.colId };
     const scores = this.#scores;
 
     return {
-      snake: snake, food: food,
+      snake: snakeStatus, food: foodStatus,
       scores: scores
     }
   }
@@ -49,14 +48,14 @@ class Game {
   }
 
   getTailAndSpecies() {
-    let [colId, rowId] = this.#snake.previousTail;
-    const cell = getCell(colId, rowId);
-    const species = this.#snake.species;
-    return { cell, species };
+    return this.#snake.tailAndSpecies();
   }
 
   turnGhostLeft() {
     this.#snake.turnLeft();
   }
 
+  handleKeyPress() {
+    this.#snake.turnLeft();
+  }
 }
