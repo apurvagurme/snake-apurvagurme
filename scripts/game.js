@@ -3,10 +3,10 @@ class Game {
   #snake;
   #scores;
 
-  constructor(food, snake) {
+  constructor(food, snake, scores) {
     this.#food = new Food(food.colId, food.rowId);
     this.#snake = new Snake(snake.position, snake.direction, snake.type);
-    this.#scores = 0;
+    this.#scores = scores;
   }
 
   get status() {
@@ -48,7 +48,7 @@ class Game {
     this.#snake.move();
   }
 
-  getCellToRemove() {
+  getTailAndSpecies() {
     let [colId, rowId] = this.#snake.previousTail;
     const cell = getCell(colId, rowId);
     const species = this.#snake.species;
@@ -59,9 +59,4 @@ class Game {
     this.#snake.turnLeft();
   }
 
-  afterFoodIsEaten() {
-    this.updateLengthOfSnake();
-    this.updateScore();
-    this.updateFood();
-  }
 }

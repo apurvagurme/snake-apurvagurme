@@ -31,7 +31,7 @@ const createGrids = function () {
 };
 
 const eraseTail = function (game) {
-  const { cell, species } = game.getCellToRemove();
+  const { cell, species } = game.getTailAndSpecies();
   cell.classList.remove(species);
 };
 
@@ -58,8 +58,6 @@ const attachEventListeners = snake => {
 };
 
 const eraseFood = function (food) {
-  console.log(food);
-
   const cell = getCell(food.colId, food.rowId);
   cell.classList.remove('food')
 }
@@ -105,7 +103,8 @@ const getSnakeData = function () {
 const createGame = function () {
   const food = { colId: 44, rowId: 30 };
   const snake = getSnakeData();
-  const game = new Game(food, snake);
+  const scores = 0;
+  const game = new Game(food, snake, scores);
   return game;
 };
 
