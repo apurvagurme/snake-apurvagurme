@@ -11,7 +11,8 @@ class Game {
 
   get status() {
     const snake = this.#snake;
-    const food = this.#food;
+    const foodStatus = this.#food.status;
+    const food = { rowId: foodStatus.rowId, colId: foodStatus.colId };
     const scores = this.#scores;
 
     return {
@@ -56,5 +57,11 @@ class Game {
 
   turnGhostLeft() {
     this.#snake.turnLeft();
+  }
+
+  afterFoodIsEaten() {
+    this.updateLengthOfSnake();
+    this.updateScore();
+    this.updateFood();
   }
 }

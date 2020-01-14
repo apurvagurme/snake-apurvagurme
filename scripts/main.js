@@ -58,6 +58,8 @@ const attachEventListeners = snake => {
 };
 
 const eraseFood = function (food) {
+  console.log(food);
+
   const cell = getCell(food.colId, food.rowId);
   cell.classList.remove('food')
 }
@@ -71,7 +73,8 @@ const afterFoodIsEaten = function (game) {
   const gameStatus = game.status;
   eraseFood(gameStatus.food);
   game.updateFood();
-  drawFood(gameStatus.food);
+  const newGameStatus = game.status;
+  drawFood(newGameStatus.food);
   game.updateLengthOfSnake();
   game.updateScore();
 }
@@ -105,7 +108,6 @@ const createGame = function () {
   const game = new Game(food, snake);
   return game;
 };
-
 
 const setup = function (game) {
   const gameStatus = game.status;
