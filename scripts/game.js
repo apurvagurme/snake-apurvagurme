@@ -54,10 +54,6 @@ class Game {
     return { cell, species };
   }
 
-  get positionOfFood() {
-    return this.#food.position;
-  }
-
   turnGhostLeft() {
     this.#snake.turnLeft();
   }

@@ -35,8 +35,7 @@ const eraseTail = function (game) {
   cell.classList.remove(species);
 };
 
-const drawSnake = function (gameStatus) {
-  const { snake } = gameStatus;
+const drawSnake = function (snake) {
   snake.positions.forEach(([colId, rowId]) => {
     const cell = getCell(colId, rowId);
     cell.classList.add(snake.type);
@@ -51,29 +50,28 @@ const moveAndDrawSnake = function (game) {
   game.moveSnake();
   eraseTail(game);
   const gameStatus = game.status;
-  drawSnake(gameStatus);
+  drawSnake(gameStatus.snake);
 };
 
 const attachEventListeners = snake => {
   document.body.onkeydown = handleKeyPress.bind(null, snake);
 };
 
-const eraseFood = function (game) {
-  let [colId, rowId] = game.positionOfFood;
-  const cell = getCell(colId, rowId);
+const eraseFood = function (food) {
+  const cell = getCell(food.colId, food.rowId);
   cell.classList.remove('food')
 }
 
-const drawFood = function (game) {
-  let [colId, rowId] = game.positionOfFood;
-  const cell = getCell(colId, rowId);
+const drawFood = function (food) {
+  const cell = getCell(food.colId, food.rowId);
   cell.classList.add('food');
 };
 
 const afterFoodIsEaten = function (game) {
-  eraseFood(game);
+  const gameStatus = game.status;
+  eraseFood(gameStatus.food);
   game.updateFood();
-  drawFood(game);
+  drawFood(gameStatus.food);
   game.updateLengthOfSnake();
   game.updateScore();
 }
