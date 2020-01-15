@@ -30,19 +30,6 @@ class Game {
     return checkColId && checkRowId;
   }
 
-  updateFood() {
-    this.#food.update();
-  }
-
-  updateLengthOfSnake() {
-    this.#snake.increaseLength(this.#food.position);
-  }
-
-  updateScore() {
-    this.#scores = this.#scores + 1;
-    updateScores(this.#scores);
-  }
-
   isGameEnded(noOfCols, noOfRows) {
     const verticalLine = [0, noOfCols];
     const horizontalLine = [0, noOfRows];
@@ -70,5 +57,12 @@ class Game {
 
   handleKeyPress() {
     this.#snake.turnLeft();
+  }
+
+  update() {
+    this.#snake.increaseLength(this.#food.position);
+    this.#scores = this.#scores + 1;
+    updateScores(this.#scores);
+    this.#food.update();
   }
 }

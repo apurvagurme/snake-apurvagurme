@@ -72,11 +72,9 @@ const drawFood = function(food) {
 const afterFoodIsEaten = function(game) {
   const gameStatus = game.status;
   eraseFood(gameStatus.food);
-  game.updateFood();
+  game.update();
   const newGameStatus = game.status;
   drawFood(newGameStatus.food);
-  game.updateLengthOfSnake();
-  game.updateScore();
 };
 
 const updateAfterFoodIsEaten = function(game, interval) {
