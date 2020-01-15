@@ -86,7 +86,7 @@ const updateAfterFoodIsEaten = game => {
     if (game.isFoodEaten()) {
       afterFoodIsEaten(game);
     }
-  }, 100)
+  }, 200)
 }
 
 const getSnakeData = function () {
@@ -114,15 +114,6 @@ const setup = function (game) {
   updateAfterFoodIsEaten(game);
 }
 
-const changeDirection = function (game) {
-  setInterval(() => {
-    let x = Math.random() * 100;
-    if (x > 50) {
-      game.turnGhostLeft();
-    }
-  }, 500);
-}
-
 const moveSnakes = function (game) {
   setInterval(() => {
     moveAndDrawSnake(game);
@@ -132,5 +123,6 @@ const moveSnakes = function (game) {
 const main = function () {
   const game = createGame();
   setup(game);
+  updateAfterFoodIsEaten(game);
   moveSnakes(game);
 };

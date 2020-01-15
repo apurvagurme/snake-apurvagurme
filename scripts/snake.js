@@ -22,10 +22,6 @@ class Snake {
     return this.#positions[this.#positions.length - 1];
   }
 
-  get location() {
-    return this.#positions.slice();
-  }
-
   get species() {
     return this.#type;
   }
@@ -45,9 +41,12 @@ class Snake {
     this.#positions.unshift(food);
   }
 
-  hasTouchedWall(noOfCols, noOfRows) {
-    return this.head[0] >= noOfCols || this.head[0] < 0 &&
-      this.head[1] >= noOfRows || this.head[1] <= 0;
+  hasTouchedWall(verticalLine, horizontalLine) {
+    const isLeftWallTouch = this.head[1] < verticalLine[0];
+    const isRightWallTouch = this.head[0] >= verticalLine[1];
+    const isTopTouch = this.head[0] < horizontalLine[0];
+    const isBottomTouch = this.head[1] >= horizontalLine[1];
+    return isTopTouch || isLeftWallTouch || isBottomTouch || isRightWallTouch;
   }
 
   hasTouchedItself() {

@@ -21,9 +21,9 @@ class Game {
   }
 
   isFoodEaten() {
-    const snake = JSON.stringify(this.#snake.head);
-    const food = JSON.stringify(this.#food.position);
-    return snake == food;
+    const checkColId = this.#snake.head[0] == this.#food.position[0];
+    const checkRowId = this.#snake.head[1] == this.#food.position[1];
+    return checkColId && checkRowId;
   }
 
   updateFood() {
@@ -40,7 +40,9 @@ class Game {
   }
 
   isGameEnded(noOfCols, noOfRows) {
-    return this.#snake.hasTouchedItself() || this.#snake.hasTouchedWall(noOfCols, noOfRows);
+    const verticalLine = [0, noOfCols]
+    const horizontalLine = [0, noOfRows]
+    return this.#snake.hasTouchedItself() || this.#snake.hasTouchedWall(verticalLine, horizontalLine);
   }
 
   moveSnake() {
