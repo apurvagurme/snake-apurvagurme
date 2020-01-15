@@ -1,11 +1,12 @@
 class Game {
   #food;
   #snake;
+  #gostSnake;
   #scores;
-
-  constructor(food, snake, scores) {
+  constructor(food, snake, ghostSnake, scores) {
     this.#food = new Food(food.colId, food.rowId);
     this.#snake = new Snake(snake.position, snake.direction, snake.type);
+    this.#snake = new Snake(ghostSnake.position, ghostSnake.direction, ghostSnake.type);
     this.#scores = scores;
   }
 
@@ -15,9 +16,10 @@ class Game {
     const scores = this.#scores;
 
     return {
-      snake: snakeStatus, food: foodStatus,
+      snake: snakeStatus,
+      food: foodStatus,
       scores: scores
-    }
+    };
   }
 
   isFoodEaten() {
@@ -40,9 +42,11 @@ class Game {
   }
 
   isGameEnded(noOfCols, noOfRows) {
-    const verticalLine = [0, noOfCols]
-    const horizontalLine = [0, noOfRows]
-    return this.#snake.hasTouchedItself() || this.#snake.hasTouchedWall(verticalLine, horizontalLine);
+    const verticalLine = [0, noOfCols];
+    const horizontalLine = [0, noOfRows];
+    return (
+      this.#snake.hasTouchedItself() || this.#snake.hasTouchedWall(verticalLine, horizontalLine)
+    );
   }
 
   moveSnake() {
