@@ -32,6 +32,8 @@ const createGrids = function() {
 const eraseTail = function(game) {
   const { cell, species } = game.getTailAndSpecies();
   cell.classList.remove(species);
+  const { cell1, species1 } = game.getGhostTailAndSpecies();
+  cell1.classList.remove(species1);
 };
 
 const drawSnake = function(snake) {
@@ -46,6 +48,7 @@ const moveAndDrawSnake = function(game) {
   eraseTail(game);
   const gameStatus = game.status;
   drawSnake(gameStatus.snake);
+  drawSnake(gameStatus.ghostSnake);
 };
 
 const handleKeyPress = snake => {
@@ -101,13 +104,20 @@ const getSnakeData = function() {
 const getGhostSnakeData = function() {
   return {
     position: [
-      [2, 30],
-      [3, 30],
-      [4, 30]
+      [30, 30],
+      [31, 30],
+      [32, 30]
     ],
     direction: new Direction(SOUTH),
-    type: 'ghostSnake'
+    type: 'ghost'
   };
+};
+
+const randomlyTurnSnake = game => {
+  let x = Math.random() * 100;
+  if (x > 50) {
+    game.turnGhostSnake();
+  }
 };
 
 const createGame = function() {
@@ -122,7 +132,6 @@ const createGame = function() {
 const setup = function(game) {
   attachEventListeners(game);
   createGrids();
-  updateAfterFoodIsEaten(game);
 };
 
 const main = function() {
@@ -132,5 +141,6 @@ const main = function() {
   const gameInterval = setInterval(() => {
     updateAfterFoodIsEaten(game, gameInterval);
     moveAndDrawSnake(game);
+    randomlyTurnSnake(game);
   }, 200);
 };

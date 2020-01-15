@@ -1,24 +1,26 @@
 class Game {
   #food;
   #snake;
-  #gostSnake;
+  #ghostSnake;
   #scores;
   constructor(food, snake, ghostSnake, scores) {
     this.#food = new Food(food.colId, food.rowId);
     this.#snake = new Snake(snake.position, snake.direction, snake.type);
-    this.#snake = new Snake(ghostSnake.position, ghostSnake.direction, ghostSnake.type);
+    this.#ghostSnake = new Snake(ghostSnake.position, ghostSnake.direction, ghostSnake.type);
     this.#scores = scores;
   }
 
   get status() {
     const snakeStatus = this.#snake.status;
+    const ghostSnakeStatus = this.#ghostSnake.status;
     const foodStatus = this.#food.status;
     const scores = this.#scores;
 
     return {
       snake: snakeStatus,
       food: foodStatus,
-      scores: scores
+      scores: scores,
+      ghostSnake: ghostSnakeStatus
     };
   }
 
@@ -51,14 +53,19 @@ class Game {
 
   moveSnake() {
     this.#snake.move();
+    this.#ghostSnake.move();
   }
 
   getTailAndSpecies() {
     return this.#snake.tailAndSpecies();
   }
 
-  turnGhostLeft() {
-    this.#snake.turnLeft();
+  getGhostTailAndSpecies() {
+    return this.#ghostSnake.tailAndSpeciesOfGhost();
+  }
+
+  turnGhostSnake() {
+    this.#ghostSnake.turnLeft();
   }
 
   handleKeyPress() {

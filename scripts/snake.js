@@ -15,7 +15,7 @@ class Snake {
     const direction = this.#direction;
     const type = this.#type;
     const positions = this.#positions;
-    return { previousTail, positions, type, direction }
+    return { previousTail, positions, type, direction };
   }
 
   get head() {
@@ -67,5 +67,12 @@ class Snake {
     const cell = getCell(colId, rowId);
     const species = this.species;
     return { cell, species };
+  }
+
+  tailAndSpeciesOfGhost() {
+    let [colId, rowId] = this.#previousTail;
+    const cell1 = getCell(colId, rowId);
+    const species1 = this.species;
+    return { cell1, species1 };
   }
 }
