@@ -52,7 +52,11 @@ const updateFood = function(food) {
   eraseFood(food);
 };
 
-const moveAndDrawSnake = function(game) {
+const moveAndDrawSnake = function(game, gameInterval) {
+  if (game.hasGameEnded(NUM_OF_COLS, NUM_OF_ROWS)) {
+    alert('game ended');
+    clearInterval(gameInterval);
+  }
   game.moveSnake();
   const { food, snake, ghostSnake } = game.status;
   updateSnake(snake);

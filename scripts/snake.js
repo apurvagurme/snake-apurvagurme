@@ -51,14 +51,9 @@ class Snake {
 
   hasTouchedItself() {
     const bodyParts = this.#positions.slice(0, -1);
-    let equalPositions = 0;
-    bodyParts.forEach(part => {
-      if (part[0] == this.head[0] && part[1] == this.head[1]) {
-        equalPositions++;
-      }
+    const { headX, headY } = this.head;
+    return bodyParts.some(part => {
+      return part[0] == headX && part[1] == headY;
     });
-    if (equalPositions > 0) {
-      return true;
-    }
   }
 }
