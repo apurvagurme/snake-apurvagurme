@@ -73,12 +73,13 @@ const afterFoodIsEaten = function(game) {
   drawFood(newGameStatus.food);
 };
 
-const updateAfterFoodIsEaten = function(game, interval) {
-  if (game.isGameEnded(NUM_OF_COLS, NUM_OF_ROWS)) {
+const isFoodEaten = function(game, interval) {
+  if (game.hasGameEnded(NUM_OF_COLS, NUM_OF_ROWS)) {
     alert('Game Over');
     clearInterval(interval);
   }
-  if (game.isFoodEaten()) {
+
+  if (game.isFoodEaten('snake')) {
     afterFoodIsEaten(game);
   }
 };
@@ -126,6 +127,8 @@ const createGame = function() {
 const setup = function(game) {
   attachEventListeners(game);
   createGrids();
+  const gameStatus = game.status;
+  drawFood(gameStatus.food);
 };
 
 const main = function() {
@@ -133,7 +136,7 @@ const main = function() {
   setup(game);
 
   const gameInterval = setInterval(() => {
-    updateAfterFoodIsEaten(game, gameInterval);
+    isFoodEaten(game, gameInterval);
     moveAndDrawSnake(game);
     randomlyTurnSnake(game);
   }, 200);

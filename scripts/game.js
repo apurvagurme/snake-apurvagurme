@@ -24,13 +24,14 @@ class Game {
     };
   }
 
-  isFoodEaten() {
-    const checkColId = this.#snake.head[0] == this.#food.position[0];
-    const checkRowId = this.#snake.head[1] == this.#food.position[1];
+  isFoodEaten(type) {
+    const snakes = { snake: this.#snake, ghostSnake: this.#ghostSnake };
+    const checkColId = snakes[type].head[0] == this.#food.position[0];
+    const checkRowId = snakes[type].head[1] == this.#food.position[1];
     return checkColId && checkRowId;
   }
 
-  isGameEnded(noOfCols, noOfRows) {
+  hasGameEnded(noOfCols, noOfRows) {
     const verticalLine = [0, noOfCols];
     const horizontalLine = [0, noOfRows];
     return (
