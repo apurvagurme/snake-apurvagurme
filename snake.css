@@ -2,7 +2,7 @@ h1 {
   text-align: center;
 }
 
-#score{
+#score {
   padding-top: 10px;
   width: 100px;
   height: 40px;
@@ -28,12 +28,13 @@ h1 {
 
 .snake {
   background-color: black;
+  border-radius: 30%;
 }
 
 .ghost {
   background-color: gray;
 }
 
-.food{
-  background-color:red;
+.food {
+  background-color: red;
 }

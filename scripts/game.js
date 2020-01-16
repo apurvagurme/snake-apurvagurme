@@ -4,7 +4,7 @@ class Game {
   #ghostSnake;
   #scores;
   constructor(food, snake, ghostSnake, scores) {
-    this.#food = new Food(food.colId, food.rowId);
+    this.#food = new Food(food.colId, food.rowId, food.previousFood);
     this.#snake = new Snake(snake.position, snake.direction, snake.type);
     this.#ghostSnake = new Snake(ghostSnake.position, ghostSnake.direction, ghostSnake.type);
     this.#scores = scores;
@@ -42,6 +42,9 @@ class Game {
   moveSnake() {
     this.#snake.move();
     this.#ghostSnake.move();
+    if (this.isFoodEaten('snake') || this.isFoodEaten('ghostSnake')) {
+      this.update();
+    }
   }
 
   turnSnake(type) {

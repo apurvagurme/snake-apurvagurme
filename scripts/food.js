@@ -1,15 +1,18 @@
 class Food {
   #colId;
   #rowId;
-  constructor(colId, rowId) {
+  #previousFood;
+  constructor(colId, rowId, previousFood) {
     this.#colId = colId;
     this.#rowId = rowId;
+    this.#previousFood = previousFood;
   }
 
   get status() {
     const colId = this.#colId;
     const rowId = this.#rowId;
-    return { colId, rowId }
+    const previousFood = this.#previousFood;
+    return { colId, rowId, previousFood };
   }
 
   get position() {
@@ -17,6 +20,7 @@ class Food {
   }
 
   update() {
+    this.#previousFood = this.position;
     this.#colId = Math.floor(Math.random() * 100);
     this.#rowId = Math.floor(Math.random() * 60);
   }
