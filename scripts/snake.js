@@ -68,11 +68,4 @@ class Snake {
     const species = this.species;
     return { cell, species };
   }
-
-  tailAndSpeciesOfGhost() {
-    let [colId, rowId] = this.#previousTail;
-    const cell1 = getCell(colId, rowId);
-    const species1 = this.species;
-    return { cell1, species1 };
-  }
 }

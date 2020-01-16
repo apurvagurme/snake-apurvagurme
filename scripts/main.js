@@ -30,10 +30,10 @@ const createGrids = function() {
 };
 
 const eraseTail = function(game) {
-  const { cell, species } = game.getTailAndSpecies();
-  cell.classList.remove(species);
-  const { cell1, species1 } = game.getGhostTailAndSpecies();
-  cell1.classList.remove(species1);
+  const snake = game.getTailAndSpecies('snake');
+  snake.cell.classList.remove(snake.species);
+  ghostSnake = game.getTailAndSpecies('ghostSnake');
+  ghostSnake.cell.classList.remove(ghostSnake.species);
 };
 
 const drawSnake = function(snake) {
