@@ -42,7 +42,7 @@ class Game {
   moveSnake() {
     this.#snake.move();
     this.#ghostSnake.move();
-    if (this.isFoodEaten('snake') || this.isFoodEaten('ghostSnake')) {
+    if (this.isFoodEaten('snake')) {
       this.update();
     }
   }
@@ -53,7 +53,7 @@ class Game {
   }
 
   update() {
-    this.#snake.increaseLength(this.#food.position);
+    this.#snake.increaseLength();
     this.#scores = this.#scores + 1;
     updateScores(this.#scores);
     this.#food.update();

@@ -37,8 +37,8 @@ class Snake {
     this.#positions.push([headX + deltaX, headY + deltaY]);
   }
 
-  increaseLength(food) {
-    this.#positions.unshift(food);
+  increaseLength() {
+    this.#positions.unshift(this.#previousTail);
   }
 
   hasTouchedWall(verticalLine, horizontalLine) {
@@ -50,10 +50,10 @@ class Snake {
   }
 
   hasTouchedItself() {
-    const bodyParts = this.#positions.slice(0, -1);
-    const { headX, headY } = this.head;
-    return bodyParts.some(part => {
-      return part[0] == headX && part[1] == headY;
+    const body = this.#positions.slice(0, -1);
+    return body.some(([partX, partY]) => {
+      const [headX, headY] = this.head;
+      return headX == partX && headY == partY;
     });
   }
 }

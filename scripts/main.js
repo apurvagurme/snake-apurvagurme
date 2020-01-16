@@ -52,16 +52,26 @@ const updateFood = function(food) {
   eraseFood(food);
 };
 
-const moveAndDrawSnake = function(game, gameInterval) {
-  if (game.hasGameEnded(NUM_OF_COLS, NUM_OF_ROWS)) {
-    alert('game ended');
-    clearInterval(gameInterval);
-  }
-  game.moveSnake();
+const updateGame = function(game) {
   const { food, snake, ghostSnake } = game.status;
   updateSnake(snake);
   updateSnake(ghostSnake);
   updateFood(food);
+};
+
+const gameOver = () => {
+  const gameOver = document.getElementById('gameOver');
+  gameOver.innerText = 'Game Over';
+  gameOver.className = 'gameOver';
+};
+
+const moveAndDrawSnake = function(game, gameInterval) {
+  game.moveSnake();
+  if (game.hasGameEnded(NUM_OF_COLS, NUM_OF_ROWS)) {
+    gameOver();
+    clearInterval(gameInterval);
+  }
+  updateGame(game);
 };
 
 const attachEventListeners = game => {

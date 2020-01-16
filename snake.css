@@ -36,5 +36,12 @@ h1 {
 }
 
 .food {
+  border-radius: 30%;
   background-color: red;
+}
+
+.gameOver {
+  margin: 0 auto;
+  font-size: 40px;
+  text-align: center;
 }
