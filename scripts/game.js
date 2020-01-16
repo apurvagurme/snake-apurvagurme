@@ -48,12 +48,9 @@ class Game {
     return snakes[type].tailAndSpecies();
   }
 
-  turnGhostSnake() {
-    this.#ghostSnake.turnLeft();
-  }
-
-  handleKeyPress() {
-    this.#snake.turnLeft();
+  turnSnake(type) {
+    const snakes = { snake: this.#snake, ghostSnake: this.#ghostSnake };
+    snakes[type].turnLeft();
   }
 
   update() {

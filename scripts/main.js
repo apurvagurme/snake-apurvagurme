@@ -32,7 +32,7 @@ const createGrids = function() {
 const eraseTail = function(game) {
   const snake = game.getTailAndSpecies('snake');
   snake.cell.classList.remove(snake.species);
-  ghostSnake = game.getTailAndSpecies('ghostSnake');
+  const ghostSnake = game.getTailAndSpecies('ghostSnake');
   ghostSnake.cell.classList.remove(ghostSnake.species);
 };
 
@@ -51,12 +51,8 @@ const moveAndDrawSnake = function(game) {
   drawSnake(gameStatus.ghostSnake);
 };
 
-const handleKeyPress = snake => {
-  snake.turnLeft();
-};
-
 const attachEventListeners = game => {
-  document.body.onkeydown = () => game.handleKeyPress();
+  document.body.onkeydown = () => game.turnSnake('snake');
 };
 
 const eraseFood = function(food) {
@@ -114,7 +110,7 @@ const getGhostSnakeData = function() {
 const randomlyTurnSnake = game => {
   let x = Math.random() * 100;
   if (x > 50) {
-    game.turnGhostSnake();
+    game.turnSnake('ghostSnake');
   }
 };
 
