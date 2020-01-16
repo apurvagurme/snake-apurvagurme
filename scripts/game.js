@@ -44,11 +44,6 @@ class Game {
     this.#ghostSnake.move();
   }
 
-  getTailAndSpecies(type) {
-    const snakes = { snake: this.#snake, ghostSnake: this.#ghostSnake };
-    return snakes[type].tailAndSpecies();
-  }
-
   turnSnake(type) {
     const snakes = { snake: this.#snake, ghostSnake: this.#ghostSnake };
     snakes[type].turnLeft();

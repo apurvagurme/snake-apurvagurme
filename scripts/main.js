@@ -29,11 +29,10 @@ const createGrids = function() {
   }
 };
 
-const eraseTail = function(game) {
-  const snake = game.getTailAndSpecies('snake');
-  snake.cell.classList.remove(snake.species);
-  const ghostSnake = game.getTailAndSpecies('ghostSnake');
-  ghostSnake.cell.classList.remove(ghostSnake.species);
+const eraseTail = function(snake) {
+  const [colId, rowId] = snake.previousTail;
+  const cell = getCell(colId, rowId);
+  cell.classList.remove(snake.type);
 };
 
 const drawSnake = function(snake) {
@@ -43,12 +42,16 @@ const drawSnake = function(snake) {
   });
 };
 
+const updateSnake = function(snake) {
+  eraseTail(snake);
+  drawSnake(snake);
+};
+
 const moveAndDrawSnake = function(game) {
   game.moveSnake();
-  eraseTail(game);
-  const gameStatus = game.status;
-  drawSnake(gameStatus.snake);
-  drawSnake(gameStatus.ghostSnake);
+  const { snake, ghostSnake } = game.status;
+  updateSnake(snake);
+  updateSnake(ghostSnake);
 };
 
 const attachEventListeners = game => {

@@ -61,11 +61,4 @@ class Snake {
       return true;
     }
   }
-
-  tailAndSpecies() {
-    let [colId, rowId] = this.#previousTail;
-    const cell = getCell(colId, rowId);
-    const species = this.species;
-    return { cell, species };
-  }
 }
