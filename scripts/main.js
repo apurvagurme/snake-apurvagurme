@@ -48,8 +48,8 @@ const updateSnake = function(snake) {
 };
 
 const updateFood = function(food) {
+  eraseFood();
   drawFood(food);
-  eraseFood(food);
 };
 
 const updateGame = function(game) {
@@ -78,10 +78,9 @@ const attachEventListeners = game => {
   document.body.onkeydown = () => game.turnSnake('snake');
 };
 
-const eraseFood = function(food) {
-  const [colId, rowId] = food.previousFood;
-  const cell = getCell(colId, rowId);
-  cell.classList.remove('food');
+const eraseFood = function() {
+  const prevFood = document.querySelector('.food');
+  prevFood.classList.remove('food');
 };
 
 const drawFood = function(food) {
