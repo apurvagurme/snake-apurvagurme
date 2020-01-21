@@ -144,3 +144,5 @@ const main = function() {
     randomlyTurnSnake(game);
   }, 200);
 };
+
+window.onload = main;
