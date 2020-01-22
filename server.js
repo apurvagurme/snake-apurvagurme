@@ -1,8 +1,8 @@
 const { Server } = require('net');
 const fs = require('fs');
 const server = new Server();
-
-const contentTypes = {
+const DIR_PATH = __dirname;
+const CONTENT_TYPES = {
   js: 'text/javascript',
   css: 'text/css',
   ico: 'image/vnd.microsoft.icon',
@@ -34,9 +34,9 @@ const generateResponse = function(text) {
   if (method == 'GET' && requestUrl == '/favicon.ico') {
     return '';
   }
-  const extension = requestUrl.match(/\.(.*$)/)[1];
-  const contentType = contentTypes[extension];
-  return getResponse(contentType, getFileContent(`.${requestUrl}`));
+  const [, extension] = requestUrl.match(/\.(.*$)/);
+  const contentType = CONTENT_TYPES[extension];
+  return getResponse(contentType, getFileContent(`${DIR_PATH}${requestUrl}`));
 };
 
 const handleConnection = function(socket) {

@@ -1,653 +1,0 @@
-Script started on Wed Jan 22 17:30:37 2020
-/Users/step28/.zshrc:107: bad assignment
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hc[90mode .[39mc[39md[90m [90mD[90mo[90mw[90mnloads[39m[10D[39m [39ms[90mu[90mm[90mA[90ms[90ms[90mi[90mg[90mn[90mment[39m[12D[39mc[39mr[39mi[39mp[39mt[39ms[39m[1m/[0m[39m [39m [39m [39m [39m [0m [?1l>[?2004l
-]2;cd scripts]1;cd[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme/scripts]1;..gurme/scripts[0m[27m[24m[J[01;32m➜  [36mscripts[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004h.[90m.[39m.[39m./[90mmyNameAnimation[39m[15D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [16D.[90m.[39m [39m n[90mode server.js[39m[13Dn[39mo[39md[39me[39m [39m.[90m/[90ms[90mr[90mc[90m/[90mq[90mu[90mi[90mz.js[39m[12D[39m/[90m/[39m[39m.[90m/[90mf[90mu[90mn[90mc[90mt[90mi[90mo[90mn[90ms[90m/[90mcollatz.js[39m[21D[39m/[39ms[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [19Dnake.css[1m [0m[0m         erver.js[1m [0m[0m [?1l>[?2004l
-]2;node ../server.js]1;node/Users/step28/terminal/html/snake-apurvagurme
-Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-./index.html
-internal/fs/utils.js:220
-    throw err;
-    ^
-
-Error: ENOENT: no such file or directory, open './index.html'
-[90m    at Object.openSync (fs.js:440:3)[39m
-[90m    at Object.readFileSync (fs.js:342:35)[39m
-    at getFileContent (/Users/step28/terminal/html/snake-apurvagurme/server.js:15:13)
-    at generateResponse (/Users/step28/terminal/html/snake-apurvagurme/server.js:33:48)
-    at Socket.<anonymous> (/Users/step28/terminal/html/snake-apurvagurme/server.js:48:18)
-[90m    at Socket.emit (events.js:210:5)[39m
-[90m    at addChunk (_stream_readable.js:309:12)[39m
-[90m    at readableAddChunk (_stream_readable.js:286:13)[39m
-[90m    at Socket.Readable.push (_stream_readable.js:224:10)[39m
-[90m    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)[39m {
-  errno: [33m-2[39m,
-  syscall: [32m'open'[39m,
-  code: [32m'ENOENT'[39m,
-  path: [32m'./index.html'[39m
-}
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme/scripts]1;..gurme/scripts[0m[27m[24m[J[01;31m➜  [36mscripts[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode ../server.js[17Dcd scripts       [10Dscript    cd scripts[10Dnode ../server.js[17D                 [17D.[90m.[39m.[39m.[?1l>[?2004l
-]2;..]1;..[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;32m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004h[?2004l
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004h[H[2J[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K..[?1l>[?2004l
-]2;..]1;..[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html]1;~/terminal/html[0m[27m[24m[J[01;32m➜  [36mhtml[00m [K[?1h=[?2004hs[90mcript[39ms[39mn[90ma[90mk[90me[90m-[90mapurvagurme[39m[15D[39ma[39mk[39me[39m-[39ma[39mp[39mu[39mr[39mv[39ma[39mg[39mu[39mr[39mm[39me[?1l>[?2004l
-]2;snake-apurvagurme]1;snake-apurvagurme[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;32m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hsnake-apurvagurme[17D..               [15Dnode ../server.js[?1l>[?2004l
-]2;node ../server.js]1;nodeinternal/modules/cjs/loader.js:800
-    throw err;
-    ^
-
-Error: Cannot find module '/Users/step28/terminal/html/server.js'
-[90m    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:797:15)[39m
-[90m    at Function.Module._load (internal/modules/cjs/loader.js:690:27)[39m
-[90m    at Function.Module.runMain (internal/modules/cjs/loader.js:1047:10)[39m
-[90m    at internal/main/run_main_module.js:17:11[39m {
-  code: [32m'MODULE_NOT_FOUND'[39m,
-  requireStack: []
-}
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode ../server.js[17Dsnake-apurvagurme[17D..               [15Dnode ../server.js[17Dcd scripts       [10Dscript    ls    node server.js[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-./index.html
-client ended
-/Users/step28/terminal/html/snake-apurvagurme//snake.css
-/Users/step28/terminal/html/snake-apurvagurme//scripts/direction.js
-/Users/step28/terminal/html/snake-apurvagurme//scripts/snake.js
-client ended
-/Users/step28/terminal/html/snake-apurvagurme//scripts/game.js
-/Users/step28/terminal/html/snake-apurvagurme//scripts/main.js
-client ended
-client ended
-client ended
-client ended
-/Users/step28/terminal/html/snake-apurvagurme//scripts/food.js
-client ended
-./index.html
-client ended
-/Users/step28/terminal/html/snake-apurvagurme//scripts/direction.js
-/Users/step28/terminal/html/snake-apurvagurme//snake.css
-/Users/step28/terminal/html/snake-apurvagurme//scripts/snake.js
-client ended
-client ended
-/Users/step28/terminal/html/snake-apurvagurme//scripts/game.js
-client ended
-client ended
-/Users/step28/terminal/html/snake-apurvagurme//scripts/food.js
-client ended
-/Users/step28/terminal/html/snake-apurvagurme//scripts/main.js
-client ended
-^[[A^C
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-./index.html
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/snake.css
-/Users/step28/terminal/html/snake-apurvagurme/scripts/direction.js
-/Users/step28/terminal/html/snake-apurvagurme/scripts/snake.js
-client ended
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/scripts/game.js
-/Users/step28/terminal/html/snake-apurvagurme/scripts/food.js
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/scripts/main.js
-client ended
-client ended
-client ended
-^C
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-/Users/step28/terminal/html/snake-apurvagurmeindex.html
-internal/fs/utils.js:220
-    throw err;
-    ^
-
-Error: ENOENT: no such file or directory, open '/Users/step28/terminal/html/snake-apurvagurmeindex.html'
-[90m    at Object.openSync (fs.js:440:3)[39m
-[90m    at Object.readFileSync (fs.js:342:35)[39m
-    at getFileContent (/Users/step28/terminal/html/snake-apurvagurme/server.js:17:13)
-    at generateResponse (/Users/step28/terminal/html/snake-apurvagurme/server.js:35:48)
-    at Socket.<anonymous> (/Users/step28/terminal/html/snake-apurvagurme/server.js:50:18)
-[90m    at Socket.emit (events.js:210:5)[39m
-[90m    at addChunk (_stream_readable.js:309:12)[39m
-[90m    at readableAddChunk (_stream_readable.js:286:13)[39m
-[90m    at Socket.Readable.push (_stream_readable.js:224:10)[39m
-[90m    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)[39m {
-  errno: [33m-2[39m,
-  syscall: [32m'open'[39m,
-  code: [32m'ENOENT'[39m,
-  path: [32m'/Users/step28/terminal/html/snake-apurvagurmeindex.html'[39m
-}
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-/Users/step28/terminal/html/snake-apurvagurme/index.html
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/snake.css
-/Users/step28/terminal/html/snake-apurvagurme/scripts/direction.js
-/Users/step28/terminal/html/snake-apurvagurme/scripts/snake.js
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/scripts/game.js
-client ended
-client ended
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/scripts/food.js
-/Users/step28/terminal/html/snake-apurvagurme/scripts/main.js
-client ended
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/index.html
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/snake.css
-/Users/step28/terminal/html/snake-apurvagurme/scripts/direction.js
-/Users/step28/terminal/html/snake-apurvagurme/scripts/snake.js
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/scripts/game.js
-client ended
-client ended
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/scripts/main.js
-/Users/step28/terminal/html/snake-apurvagurme/scripts/food.js
-client ended
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/index.html
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/snake.css
-/Users/step28/terminal/html/snake-apurvagurme/scripts/direction.js
-/Users/step28/terminal/html/snake-apurvagurme/scripts/snake.js
-client ended
-client ended
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/scripts/game.js
-/Users/step28/terminal/html/snake-apurvagurme/scripts/main.js
-/Users/step28/terminal/html/snake-apurvagurme/scripts/food.js
-client ended
-client ended
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/index.html
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/snake.css
-/Users/step28/terminal/html/snake-apurvagurme/scripts/snake.js
-/Users/step28/terminal/html/snake-apurvagurme/scripts/direction.js
-/Users/step28/terminal/html/snake-apurvagurme/scripts/game.js
-/Users/step28/terminal/html/snake-apurvagurme/scripts/food.js
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/scripts/main.js
-client ended
-client ended
-client ended
-client ended
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/index.html
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/snake.css
-/Users/step28/terminal/html/snake-apurvagurme/scripts/direction.js
-/Users/step28/terminal/html/snake-apurvagurme/scripts/snake.js
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/scripts/game.js
-client ended
-client ended
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/scripts/main.js
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/scripts/food.js
-client ended
-^C
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-/Users/step28/terminal/html/snake-apurvagurme/index.html
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/snake.css
-/Users/step28/terminal/html/snake-apurvagurme/scripts/direction.js
-/Users/step28/terminal/html/snake-apurvagurme/scripts/snake.js
-/Users/step28/terminal/html/snake-apurvagurme/scripts/game.js
-client ended
-client ended
-client ended
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/scripts/main.js
-client ended
-/Users/step28/terminal/html/snake-apurvagurme/scripts/food.js
-client ended
-^C
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-/Users/step28/terminal/html/snake-apurvagurme/index.html
-client ended
-[90mundefined[39m /snake.css
-/Users/step28/terminal/html/snake-apurvagurme/snake.css
-[90mundefined[39m /scripts/direction.js
-/Users/step28/terminal/html/snake-apurvagurme/scripts/direction.js
-[90mundefined[39m /scripts/snake.js
-/Users/step28/terminal/html/snake-apurvagurme/scripts/snake.js
-client ended
-[90mundefined[39m /scripts/game.js
-/Users/step28/terminal/html/snake-apurvagurme/scripts/game.js
-[90mundefined[39m /scripts/food.js
-/Users/step28/terminal/html/snake-apurvagurme/scripts/food.js
-client ended
-client ended
-client ended
-client ended
-[90mundefined[39m /scripts/main.js
-/Users/step28/terminal/html/snake-apurvagurme/scripts/main.js
-client ended
-^[[A
-^C
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-/Users/step28/terminal/html/snake-apurvagurme/index.html
-client ended
-[90mundefined[39m [ [32m'.css'[39m, [32m'css'[39m, index: [33m6[39m, input: [32m'/snake.css'[39m, groups: [90mundefined[39m ]
-/Users/step28/terminal/html/snake-apurvagurme/snake.css
-[90mundefined[39m [
-  [32m'.js'[39m,
-  [32m'js'[39m,
-  index: [33m18[39m,
-  input: [32m'/scripts/direction.js'[39m,
-  groups: [90mundefined[39m
-]
-/Users/step28/terminal/html/snake-apurvagurme/scripts/direction.js
-[90mundefined[39m [
-  [32m'.js'[39m,
-  [32m'js'[39m,
-  index: [33m14[39m,
-  input: [32m'/scripts/snake.js'[39m,
-  groups: [90mundefined[39m
-]
-/Users/step28/terminal/html/snake-apurvagurme/scripts/snake.js
-[90mundefined[39m [
-  [32m'.js'[39m,
-  [32m'js'[39m,
-  index: [33m13[39m,
-  input: [32m'/scripts/food.js'[39m,
-  groups: [90mundefined[39m
-]
-/Users/step28/terminal/html/snake-apurvagurme/scripts/food.js
-client ended
-[90mundefined[39m [
-  [32m'.js'[39m,
-  [32m'js'[39m,
-  index: [33m13[39m,
-  input: [32m'/scripts/game.js'[39m,
-  groups: [90mundefined[39m
-]
-/Users/step28/terminal/html/snake-apurvagurme/scripts/game.js
-client ended
-client ended
-client ended
-client ended
-[90mundefined[39m [
-  [32m'.js'[39m,
-  [32m'js'[39m,
-  index: [33m13[39m,
-  input: [32m'/scripts/main.js'[39m,
-  groups: [90mundefined[39m
-]
-/Users/step28/terminal/html/snake-apurvagurme/scripts/main.js
-client ended
-^C
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-/Users/step28/terminal/html/snake-apurvagurme/server.js:34
-  const extension = requestUrl.match(/\.(.*$)/)[1];
-                                               ^
-
-TypeError: Cannot read property '1' of null
-    at generateResponse (/Users/step28/terminal/html/snake-apurvagurme/server.js:34:48)
-    at Socket.<anonymous> (/Users/step28/terminal/html/snake-apurvagurme/server.js:51:18)
-[90m    at Socket.emit (events.js:210:5)[39m
-[90m    at addChunk (_stream_readable.js:309:12)[39m
-[90m    at readableAddChunk (_stream_readable.js:286:13)[39m
-[90m    at Socket.Readable.push (_stream_readable.js:224:10)[39m
-[90m    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)[39m
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-/Users/step28/terminal/html/snake-apurvagurme/index.html
-client ended
-[90mundefined[39m
-/Users/step28/terminal/html/snake-apurvagurme/snake.css
-[90mundefined[39m
-/Users/step28/terminal/html/snake-apurvagurme/scripts/direction.js
-[90mundefined[39m
-/Users/step28/terminal/html/snake-apurvagurme/scripts/snake.js
-[90mundefined[39m
-/Users/step28/terminal/html/snake-apurvagurme/scripts/game.js
-client ended
-client ended
-client ended
-client ended
-[90mundefined[39m
-/Users/step28/terminal/html/snake-apurvagurme/scripts/main.js
-[90mundefined[39m
-/Users/step28/terminal/html/snake-apurvagurme/scripts/food.js
-client ended
-client ended
-^C
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-client ended
-[90mundefined[39m
-[90mundefined[39m
-[90mundefined[39m
-client ended
-[90mundefined[39m
-client ended
-client ended
-client ended
-[90mundefined[39m
-client ended
-[90mundefined[39m
-client ended
-^C
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-/
-client ended
-/snake.css
-/scripts/direction.js
-/scripts/snake.js
-/scripts/game.js
-client ended
-client ended
-/scripts/food.js
-client ended
-client ended
-client ended
-/scripts/main.js
-client ended
-^C
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-[1mnull[22m
-client ended
-[ [32m'.css'[39m, [32m'css'[39m, index: [33m6[39m, input: [32m'/snake.css'[39m, groups: [90mundefined[39m ]
-[
-  [32m'.js'[39m,
-  [32m'js'[39m,
-  index: [33m18[39m,
-  input: [32m'/scripts/direction.js'[39m,
-  groups: [90mundefined[39m
-]
-[
-  [32m'.js'[39m,
-  [32m'js'[39m,
-  index: [33m14[39m,
-  input: [32m'/scripts/snake.js'[39m,
-  groups: [90mundefined[39m
-]
-client ended
-[
-  [32m'.js'[39m,
-  [32m'js'[39m,
-  index: [33m13[39m,
-  input: [32m'/scripts/game.js'[39m,
-  groups: [90mundefined[39m
-]
-client ended
-[
-  [32m'.js'[39m,
-  [32m'js'[39m,
-  index: [33m13[39m,
-  input: [32m'/scripts/food.js'[39m,
-  groups: [90mundefined[39m
-]
-client ended
-client ended
-client ended
-[
-  [32m'.js'[39m,
-  [32m'js'[39m,
-  index: [33m13[39m,
-  input: [32m'/scripts/main.js'[39m,
-  groups: [90mundefined[39m
-]
-client ended
-^C
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-[1mnull[22m
-/Users/step28/terminal/html/snake-apurvagurme/server.js:33
-  const contentType = contentTypes[extension[1]];
-                                            ^
-
-TypeError: Cannot read property '1' of null
-    at generateResponse (/Users/step28/terminal/html/snake-apurvagurme/server.js:33:45)
-    at Socket.<anonymous> (/Users/step28/terminal/html/snake-apurvagurme/server.js:49:18)
-[90m    at Socket.emit (events.js:210:5)[39m
-[90m    at addChunk (_stream_readable.js:309:12)[39m
-[90m    at readableAddChunk (_stream_readable.js:286:13)[39m
-[90m    at Socket.Readable.push (_stream_readable.js:224:10)[39m
-[90m    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)[39m
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[14D              [14D[?2004l
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[9D../s[2Cver.js[12D[3P[9C   [?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-/Users/step28/terminal/html/snake-apurvagurme/server.js:32
-  console.log(extension[1]);
-                       ^
-
-TypeError: Cannot read property '1' of null
-    at generateResponse (/Users/step28/terminal/html/snake-apurvagurme/server.js:32:24)
-    at Socket.<anonymous> (/Users/step28/terminal/html/snake-apurvagurme/server.js:49:18)
-[90m    at Socket.emit (events.js:210:5)[39m
-[90m    at addChunk (_stream_readable.js:309:12)[39m
-[90m    at readableAddChunk (_stream_readable.js:286:13)[39m
-[90m    at Socket.Readable.push (_stream_readable.js:224:10)[39m
-[90m    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)[39m
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004h[H[2J[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [Kn[90mode server.js[39m[13Dn[39mo[39md[39me[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [10D[?1l>[?2004l
-]2;node]1;nodeWelcome to Node.js v12.13.1.
-Type ".help" for more information.
-[1G[0J> [3Garr=[[1G[0J> arr=[7G[1G[0J> arr[6G[1G[0J> ar[5G[1G[0J> a[4G[1G[0J> [3G
-(To exit, press ^C again or ^D or type .exit)
-[1G[0J> [3G
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;32m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-/Users/step28/terminal/html/snake-apurvagurme/server.js:31
-  const extension = requestUrl.match(/\.(.*$)/).slice();
-                                               ^
-
-TypeError: Cannot read property 'slice' of null
-    at generateResponse (/Users/step28/terminal/html/snake-apurvagurme/server.js:31:48)
-    at Socket.<anonymous> (/Users/step28/terminal/html/snake-apurvagurme/server.js:49:18)
-[90m    at Socket.emit (events.js:210:5)[39m
-[90m    at addChunk (_stream_readable.js:309:12)[39m
-[90m    at readableAddChunk (_stream_readable.js:286:13)[39m
-[90m    at Socket.Readable.push (_stream_readable.js:224:10)[39m
-[90m    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)[39m
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-/Users/step28/terminal/html/snake-apurvagurme/server.js:31
-  const extension = requestUrl.match(/\.(.*$)/).slice('');
-                                               ^
-
-TypeError: Cannot read property 'slice' of null
-    at generateResponse (/Users/step28/terminal/html/snake-apurvagurme/server.js:31:48)
-    at Socket.<anonymous> (/Users/step28/terminal/html/snake-apurvagurme/server.js:49:18)
-[90m    at Socket.emit (events.js:210:5)[39m
-[90m    at addChunk (_stream_readable.js:309:12)[39m
-[90m    at readableAddChunk (_stream_readable.js:286:13)[39m
-[90m    at Socket.Readable.push (_stream_readable.js:224:10)[39m
-[90m    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)[39m
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004h[?2004l
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hs[90mnake-apurvagurme[39m[16Ds[39mt[90mr[90me[90ma[90mm[90ms[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [15D[39ma[90mr[90mt[39m[39m [39m [90mr[90me[90ma[90mms[39ms[90mn[90ma[90mk[90me[90m-[90ma[90mpurvagurme[39m[16D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [17Dg[90mit commit -m "Refactored code"[39m[30Dg[39mi[39mt[39m [39ma[90md[90md[90m [90m.[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [26D[90mc[90mo[90mm[90mm[90mi[90mt -m "Refactored code"[39m[27D[39ms[90mt[90ma[90ms[90mh[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [26D[39mt[39ma[39ms[39mh[?1l>[?2004l
-]2;git stash]1;gitSaved working directory and index state WIP on master: 0a57892 Refactored code
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;32m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hn[90mode server.js[39m[13Dn[39mo[39mo[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [11D[90md[90me server.js[39m[12D[39md[39me[39m [39ms[39me[39mr[39mv[39me[39mr[39m.[39mj[39ms[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-./index.html
-client ended
-./snake.css
-./scripts/direction.js
-client ended
-./scripts/snake.js
-client ended
-client ended
-./scripts/game.js
-client ended
-./scripts/food.js
-./scripts/main.js
-client ended
-client ended
-./index.html
-client ended
-./snake.css
-./scripts/direction.js
-./scripts/snake.js
-./scripts/game.js
-./scripts/food.js
-client ended
-client ended
-client ended
-client ended
-client ended
-./scripts/main.js
-client ended
-^C
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-client ended
-[ [32m'.css'[39m, [32m'css'[39m, index: [33m6[39m, input: [32m'/snake.css'[39m, groups: [90mundefined[39m ]
-[
-  [32m'.js'[39m,
-  [32m'js'[39m,
-  index: [33m18[39m,
-  input: [32m'/scripts/direction.js'[39m,
-  groups: [90mundefined[39m
-]
-[
-  [32m'.js'[39m,
-  [32m'js'[39m,
-  index: [33m14[39m,
-  input: [32m'/scripts/snake.js'[39m,
-  groups: [90mundefined[39m
-]
-client ended
-client ended
-client ended
-[
-  [32m'.js'[39m,
-  [32m'js'[39m,
-  index: [33m13[39m,
-  input: [32m'/scripts/game.js'[39m,
-  groups: [90mundefined[39m
-]
-client ended
-[
-  [32m'.js'[39m,
-  [32m'js'[39m,
-  index: [33m13[39m,
-  input: [32m'/scripts/food.js'[39m,
-  groups: [90mundefined[39m
-]
-[
-  [32m'.js'[39m,
-  [32m'js'[39m,
-  index: [33m13[39m,
-  input: [32m'/scripts/main.js'[39m,
-  groups: [90mundefined[39m
-]
-client ended
-client ended
-^C
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-client ended
-css
-js
-js
-js
-client ended
-client ended
-client ended
-client ended
-js
-js
-client ended
-client ended
-^C
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-client ended
-s
-s
-s
-s
-client ended
-client ended
-client ended
-client ended
-s
-client ended
-s
-client ended
-^C
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-client ended
-s
-s
-s
-s
-client ended
-client ended
-s
-client ended
-s
-client ended
-client ended
-client ended
-client ended
-s
-s
-s
-s
-client ended
-client ended
-client ended
-client ended
-s
-s
-client ended
-client ended
-^C
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-client ended
-css
-js
-js
-js
-client ended
-client ended
-client ended
-client ended
-js
-client ended
-js
-client ended
-^^C^C
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hnode server.js[?1l>[?2004l
-]2;node server.js]1;nodeServing HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-client ended
-client ended
-client ended
-client ended
-client ended
-client ended
-client ended
-git ^C
-[1m[7m%[27m[1m[0m                                                                                                                                 ]2;step28@Step28s-MacBook-Air: ~/terminal/html/snake-apurvagurme]1;..e-apurvagurme[0m[27m[24m[J[01;31m➜  [36msnake-apurvagurme[00m [01;34mgit:([31mmaster[34m) [33m✗[00m [K[?1h=[?2004hg[90mit stash[39m[8Dg[39mi[39mt[39m [39md[90mi[90mf[90mf[90m [39m[39mi[39mf[39mf[39m [?1l>[?2004l
-]2;git diff]1;git[?1049h[?1h=[1mdiff --git a/server.js b/server.js[m[m
-[1mindex 4591b0d..a031634 100644[m[m
-[1m--- a/server.js[m[m
-[1m+++ b/server.js[m[m
-[36m@@ -10,7 +10,6 @@[m [mconst contentTypes = {[m[m
- };[m[m
- [m[m
- const getFileContent = filePath => {[m[m
-[31m-  console.log(filePath);[m[m
-   return fs.readFileSync(`${filePath}`, 'utf8');[m[m
- };[m[m
- [m[m
-:[K[K [KESCESC[KOO[KBB[K[36m@@ -35,7 +34,7 @@[m [mconst generateResponse = function(text) {[m[m
-:[K[K [KESCESC[KOO[KBB[K   if (method == 'GET' && requestUrl == '/favicon.ico') {[m[m
-:[K[K [KESCESC[KOO[KBB[K     return '';[m[m
-:[K[K [KESCESC[KOO[KBB[K   }[m[m
-:[K[K [KESCESC[KOO[KBB[K[31m-  const extension = requestUrl.match(/\.(.*$)/);[m[m
-:[K[K [KESCESC[KOO[KBB[K[32m+[m[32m  const extension = requestUrl.match(/\.(.*$)/)[1];[m[m
-:[K[K [KESCESC[KOO[KBB[K   const contentType = contentTypes[extension];[m[m
-:[K[K [KESCESC[KOO[KBB[K   return getResponse(contentType, getFileContent(`.${requestUrl}`));[m[m
-:[K[K [KESCESC[KOO[KBB[K };[m[m
-:[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K

@@ -142,7 +142,7 @@ const main = function() {
   const gameInterval = setInterval(() => {
     moveAndDrawSnake(game, gameInterval);
     randomlyTurnSnake(game);
-  }, 200);
+  }, 100);
 };
 
 window.onload = main;
