@@ -10,7 +10,6 @@ const contentTypes = {
 };
 
 const getFileContent = filePath => {
-  console.log(filePath);
   return fs.readFileSync(`${filePath}`, 'utf8');
 };
 
@@ -35,7 +34,7 @@ const generateResponse = function(text) {
   if (method == 'GET' && requestUrl == '/favicon.ico') {
     return '';
   }
-  const extension = requestUrl.match(/\.(.*$)/);
+  const extension = requestUrl.match(/\.(.*$)/)[1];
   const contentType = contentTypes[extension];
   return getResponse(contentType, getFileContent(`.${requestUrl}`));
 };
