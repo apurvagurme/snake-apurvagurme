@@ -1,7 +1,18 @@
 const { Server } = require('net');
 const fs = require('fs');
 const server = new Server();
-const getFileContent = filePath => fs.readFileSync(`${filePath}`, 'utf8');
+
+const contentTypes = {
+  js: 'text/javascript',
+  css: 'text/css',
+  ico: 'image/vnd.microsoft.icon',
+  html: 'text/html'
+};
+
+const getFileContent = filePath => {
+  console.log(filePath);
+  return fs.readFileSync(`${filePath}`, 'utf8');
+};
 
 const getResponse = function(contentType, content) {
   const defaultResponse = [
@@ -24,7 +35,9 @@ const generateResponse = function(text) {
   if (method == 'GET' && requestUrl == '/favicon.ico') {
     return '';
   }
-  return getResponse(`text/${requestUrl.split('.')[1]}`, getFileContent(`.${requestUrl}`));
+  const extension = requestUrl.match(/\.(.*$)/);
+  const contentType = contentTypes[extension];
+  return getResponse(contentType, getFileContent(`.${requestUrl}`));
 };
 
 const handleConnection = function(socket) {
