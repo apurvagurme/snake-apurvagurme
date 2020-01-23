@@ -1,7 +1,11 @@
 const { Server } = require('net');
+
 const fs = require('fs');
+
 const server = new Server();
-const DIR_PATH = __dirname;
+
+const DIR_PATH = `${__dirname}/public`;
+
 const CONTENT_TYPES = {
   js: 'text/javascript',
   css: 'text/css',
@@ -24,19 +28,25 @@ const getResponse = function(contentType, content) {
   return defaultResponse;
 };
 
-const generateResponse = function(text) {
+const getRequest = function(text) {
   const [request, ...headers] = text.split('\n');
-  const [method, requestUrl, protocol] = request.split(' ');
-  if (method == 'GET' && requestUrl == '/') {
-    const resources = getResponse('text/html', getFileContent('./index.html'));
+  const [method, url, protocol] = request.split(' ');
+  const req = { request, headers, method, url, protocol };
+  return req;
+};
+
+const generateResponse = function(text) {
+  const request = getRequest(text);
+  if (request.method == 'GET' && request.url == '/') {
+    const resources = getResponse('text/html', getFileContent(`${DIR_PATH}/index.html`));
     return resources;
   }
-  if (method == 'GET' && requestUrl == '/favicon.ico') {
+  if (request.method == 'GET' && request.url == '/favicon.ico') {
     return '';
   }
-  const [, extension] = requestUrl.match(/\.(.*$)/);
+  const [, extension] = request.url.match(/\.(.*$)/);
   const contentType = CONTENT_TYPES[extension];
-  return getResponse(contentType, getFileContent(`${DIR_PATH}${requestUrl}`));
+  return getResponse(contentType, getFileContent(`${DIR_PATH}${request.url}`));
 };
 
 const handleConnection = function(socket) {
