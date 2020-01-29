@@ -1,68 +1,51 @@
-const { Server } = require('net');
-
+const { Server } = require('http');
 const fs = require('fs');
-
-const server = new Server();
-
 const DIR_PATH = `${__dirname}/public`;
-
 const CONTENT_TYPES = {
   js: 'text/javascript',
   css: 'text/css',
-  ico: 'image/vnd.microsoft.icon',
-  html: 'text/html'
+  ico: 'image/x-icon',
+  html: 'text/html',
+  jpg: 'image/jpeg'
 };
 
 const getFileContent = filePath => {
   return fs.readFileSync(`${filePath}`, 'utf8');
 };
 
-const getResponse = function(contentType, content) {
-  const defaultResponse = [
-    'HTTP/1.0 200 OK',
-    `Content-type: ${contentType}`,
-    `Content-Length: ${content.length}`,
-    '',
-    content
-  ].join('\n');
-  return defaultResponse;
+const serveHomePage = function(req, res) {
+  const content = getFileContent(`${DIR_PATH}/index.html`);
+  res.setHeader('Content-Length', `${content.length}`);
+  res.setHeader('Content-type', 'text/html');
+  res.end(content);
 };
 
-const getRequest = function(text) {
-  const [request, ...headers] = text.split('\n');
-  const [method, url, protocol] = request.split(' ');
-  const req = { request, headers, method, url, protocol };
-  return req;
+const getContentType = function(req) {
+  const [, extension] = req.url.match(/\.(.*$)/);
+  return CONTENT_TYPES[extension];
 };
 
-const generateResponse = function(text) {
-  const request = getRequest(text);
-  if (request.method == 'GET' && request.url == '/') {
-    const resources = getResponse('text/html', getFileContent(`${DIR_PATH}/index.html`));
-    return resources;
-  }
-  if (request.method == 'GET' && request.url == '/favicon.ico') {
-    return '';
-  }
-  const [, extension] = request.url.match(/\.(.*$)/);
-  const contentType = CONTENT_TYPES[extension];
-  return getResponse(contentType, getFileContent(`${DIR_PATH}${request.url}`));
+const staticPage = function(req, res) {
+  const content = getFileContent(`${DIR_PATH}${req.url}`);
+  const contentType = getContentType(req);
+  res.setHeader('Content-Length', `${content.length}`);
+  res.setHeader('Content-type', `${contentType}`);
+  res.end(content);
 };
 
-const handleConnection = function(socket) {
-  socket.setEncoding('utf8');
+const getHandler = function(req) {
+  if (req.method == 'GET' && req.url == '/') return serveHomePage;
+  if (req.method == 'GET') return staticPage;
+};
 
-  socket.on('data', text => {
-    socket.write(generateResponse(text));
-  });
-
-  socket.on('end', () => console.log('client ended'));
+const handleConnection = function(req, res) {
+  const handler = getHandler(req);
+  handler(req, res);
 };
 
 const main = function() {
-  server.on('connection', handleConnection).listen(8000);
-
-  server.on('listening', () =>
+  const server = new Server(handleConnection);
+  server.listen(8000, () =>
     console.log('Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...')
   );
 };

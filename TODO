@@ -26,3 +26,5 @@
 * Score should not increase when ghostSnake eats the food.
 * The game ends when your snake touches the ghost snake.
 * Provide a special type of food that increases the score without changing the length of the snake.
+
+*Add 404 status code when request method is not GET
